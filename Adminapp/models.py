@@ -33,3 +33,16 @@ class AboutUs(models.Model):
     class Meta:
         db_table = 'AboutUs'
 
+
+
+class Employee(models.Model):
+    firstName = models.CharField(max_length=20)
+    lastName = models.CharField(max_length=20)
+    email = models.EmailField(unique=True,null=True,blank=False)
+    password = models.CharField(max_length=15)
+    mobileNo = models.CharField(max_length=10)
+    AadharNo = models.CharField(max_length=16)
+
+    class Meta:
+        db_table = "EmployeeInfo"
+    
