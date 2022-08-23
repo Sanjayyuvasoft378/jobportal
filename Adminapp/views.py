@@ -27,14 +27,19 @@ class CandidateSignupAPI(APIView):
             return JsonResponse({"message":"Internal server error {}".format(e)},safe=False,status=500)
 
 
+
+
+
+
+
 class CompanySignupAPI(APIView):
     def post(self,request,*args, **kwargs):
         try:
-            Data = request.data
-            companySerializer = CompanyInfoSerializer(data = Data)
+            get_data = request.data
+            companySerializer = CompanyInfoSerializer(data = get_data)
             if companySerializer.is_valid():
                 companySerializer.save()
-            return JsonResponse({"message":"company registered successfully"},safe=False,status=200)
+            return JsonResponse({"message":"successfully"},safe=False,status=200)
         except Exception as e:
             return JsonResponse({"message":"Internal server error {}".format(e)},safe=False,status=500)
 
