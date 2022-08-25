@@ -11,6 +11,9 @@ class CandidateInfo(models.Model):
     password = models.CharField(max_length=20)
     phoneNo = models.CharField(max_length=10)
     address = models.CharField(max_length=200)
+    gender = models.CharField(max_length=20)
+    course = models.CharField(max_length=20)
+
 
     class Meta:
         db_table = 'CandidateInfo'
